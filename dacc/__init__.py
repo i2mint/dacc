@@ -1,6 +1,6 @@
 __author__ = 'thor'
 
-from typing import Iterable
+from collections.abc import Iterable
 
 
 def has_non_callable_attr(obj, attr):
@@ -35,10 +35,10 @@ def get_subdict_and_remainder(d, list_of_keys):
     """
     keys_in = set(d.keys()).intersection(list_of_keys)
     keys_not_in = set(d.keys()).difference(list_of_keys)
-    return (dict([(i, d[i]) for i in keys_in]), dict([(i, d[i]) for i in keys_not_in]))
+    return ({i: d[i] for i in keys_in}, {i: d[i] for i in keys_not_in})
 
 
-class DataFlow(object):
+class DataFlow:
     """
     DataFlow is a framework to pipeline data processes.
     """
@@ -75,15 +75,15 @@ class DataFlow(object):
                 print(("  {}: \n    {}").format(k, ', '.join(self.data_dependencies[k])))
 
     def put_in_store(self, name, data):
-        self.print_progress('  Storing {} in store'.format(name))
+        self.print_progress(f'  Storing {name} in store')
         self.store.put(name, data)
 
     def put_in_attr(self, name, data):
-        self.print_progress('  Storing {} in attribute'.format(name))
+        self.print_progress(f'  Storing {name} in attribute')
         setattr(self, name, data)
 
     def put_in_data_dict(self, name, data):
-        self.print_progress('  Storing {} in data_dict attribute'.format(name))
+        self.print_progress(f'  Storing {name} in data_dict attribute')
         try:
             setattr(self, 'data_dict', self.data_dict.update({'name': data}))
         except AttributeError:
@@ -95,7 +95,7 @@ class DataFlow(object):
         if hasattr(self,
                    'store') and data_name in self.store:  # if no data is input and the data exists in the store...
             # return the stored data
-            self.print_progress(2, '  Getting {} from store'.format(data_name))
+            self.print_progress(2, f'  Getting {data_name} from store')
             return self.store[data_name]
         elif has_non_callable_attr(self, data_name):
             return getattr(self, data_name)
@@ -113,7 +113,7 @@ class DataFlow(object):
         # make the data
         if data_name in list(self.data_makers.keys()):
             # here the data needs to be made from data
-            self.print_progress(1, '  Making {}'.format(data_name))
+            self.print_progress(1, f'  Making {data_name}')
             kwargs = dict(input_data, **kwargs)
             made_data = self.data_makers[data_name](**kwargs)
             # store it if necessary
