@@ -1,4 +1,4 @@
-> built 2026-11-22 17:47 UTC from d0b7a16 (master) · dacc 0.0.2. Details: build_info.json
+> built 2026-11-22 22:40 UTC from 44f3d89 (master) · dacc 0.0.2. Details: build_info.json
 
 # index.html.md
 
@@ -21,6 +21,7 @@ Here is a full, and real, example of usage.
 Here we tap into some website visitor data (in mongoDB) that has IP addresses for every visit,
 and use those to get approximate geo-coordinates for the visit.
 
+<!-- wads-docs: skip legacy example importing pygeoip (not a dacc dependency) -->
 ```python
 from ut.util.data_flow import DataFlow
 from pymongo import MongoClient
@@ -104,6 +105,7 @@ class TrajFeatBuilder(DataFlow):
 
 Make the object:
 
+<!-- wads-docs: skip fragment; continues the legacy example above -->
 ```python
 dflow = TrajFeatBuilder(verbose_level=10)
 
@@ -111,6 +113,7 @@ dflow = TrajFeatBuilder(verbose_level=10)
 
 Get an `ip_list` for a given visitor
 
+<!-- wads-docs: skip fragment; dflow comes from the legacy example above -->
 ```python
 dflow.get_data('ip_list', visitor_id='201411301840218052872011')
 ```
@@ -142,6 +145,7 @@ dflow.get_data('ip_list', visitor_id='201411301840218052872011')
 
 Get a count of the locations coordinates where visitor was present.
 
+<!-- wads-docs: skip fragment; dflow comes from the legacy example above -->
 ```python
 dflow.get_data('latlon_counts', visitor_id='201411301840218052872011')
 ```
@@ -197,7 +201,7 @@ this element in a list
 
 # About this build
 
-This documentation was built on **2026-11-22 17:47 UTC** from commit <a href="https://github.com/i2mint/dacc/commit/d0b7a160f1f514dd4f1591ab154df935081ec4dd"><code>d0b7a16</code></a> on branch <code>master</code>, for **dacc 0.0.2** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-22 22:40 UTC** from commit <a href="https://github.com/i2mint/dacc/commit/44f3d89ee96fb64a3ebb806cba634ed5ab9115d8"><code>44f3d89</code></a> on branch <code>master</code>, for **dacc 0.0.2** (from <code>pyproject.toml</code>).
 
 #### NOTE
 Nothing suggests a mismatch: the tree was clean at the commit above, and the documented version is the one on PyPI.
@@ -206,7 +210,7 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 
 |                     |                                                                                                                                                    |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/i2mint/dacc/commit/d0b7a160f1f514dd4f1591ab154df935081ec4dd"><code>d0b7a160f1f514dd4f1591ab154df935081ec4dd</code></a> |
+| Commit              | <a href="https://github.com/i2mint/dacc/commit/44f3d89ee96fb64a3ebb806cba634ed5ab9115d8"><code>44f3d89ee96fb64a3ebb806cba634ed5ab9115d8</code></a> |
 | Branch              | <code>master</code>                                                                                                                                |
 | Tags at this commit | none                                                                                                                                               |
 | Working tree        | clean                                                                                                                                              |
@@ -217,9 +221,9 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>i2mint/dacc</code>                                                                   |
-| Run          | <a href="https://github.com/i2mint/dacc/actions/runs/45051231593">45051231593</a>          |
+| Run          | <a href="https://github.com/i2mint/dacc/actions/runs/45078936122">45078936122</a>          |
 | Ref          | <code>refs/heads/master</code>                                                             |
-| Event commit | <code>d0b7a160f1f514dd4f1591ab154df935081ec4dd</code> (in the history of the built commit) |
+| Event commit | <code>44f3d89ee96fb64a3ebb806cba634ed5ab9115d8</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -250,7 +254,7 @@ Latest release: <a href="https://pypi.org/project/dacc/0.0.2/">0.0.2</a>, the sa
 
 ```bash
 git clone https://github.com/i2mint/dacc && cd dacc
-git checkout d0b7a160f1f514dd4f1591ab154df935081ec4dd
+git checkout 44f3d89ee96fb64a3ebb806cba634ed5ab9115d8
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```

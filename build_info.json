@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "built_at": "2026-11-22T17:47:00Z",
+  "built_at": "2026-11-22T22:40:45Z",
   "package": {
     "name": "dacc",
     "version": "0.0.2",
@@ -9,24 +9,24 @@
   },
   "git": {
     "available": true,
-    "commit": "d0b7a160f1f514dd4f1591ab154df935081ec4dd",
-    "short_commit": "d0b7a16",
+    "commit": "44f3d89ee96fb64a3ebb806cba634ed5ab9115d8",
+    "short_commit": "44f3d89",
     "branch": "master",
     "tags": [],
     "dirty": false,
     "remote_url": "https://github.com/i2mint/dacc",
-    "commit_url": "https://github.com/i2mint/dacc/commit/d0b7a160f1f514dd4f1591ab154df935081ec4dd",
+    "commit_url": "https://github.com/i2mint/dacc/commit/44f3d89ee96fb64a3ebb806cba634ed5ab9115d8",
     "error": null
   },
   "ci": {
     "provider": "github",
     "repository": "i2mint/dacc",
-    "sha": "d0b7a160f1f514dd4f1591ab154df935081ec4dd",
+    "sha": "44f3d89ee96fb64a3ebb806cba634ed5ab9115d8",
     "sha_in_history": true,
     "ref": "refs/heads/master",
     "ref_name": "master",
-    "run_id": "45051231593",
-    "run_url": "https://github.com/i2mint/dacc/actions/runs/45051231593",
+    "run_id": "45078936122",
+    "run_url": "https://github.com/i2mint/dacc/actions/runs/45078936122",
     "server_url": "https://github.com"
   },
   "tools": {
@@ -64,7 +64,7 @@
     "relation": "same",
     "error": null
   },
-  "reproduce": "git clone https://github.com/i2mint/dacc && cd dacc\ngit checkout d0b7a160f1f514dd4f1591ab154df935081ec4dd\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
+  "reproduce": "git clone https://github.com/i2mint/dacc && cd dacc\ngit checkout 44f3d89ee96fb64a3ebb806cba634ed5ab9115d8\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
   "warnings": [],
   "alignment": {
     "aligned": true,

@@ -17,6 +17,7 @@ Here is a full, and real, example of usage.
 Here we tap into some website visitor data (in mongoDB) that has IP addresses for every visit,
 and use those to get approximate geo-coordinates for the visit.
 
+<!-- wads-docs: skip legacy example importing pygeoip (not a dacc dependency) -->
 ```python
 from ut.util.data_flow import DataFlow
 from pymongo import MongoClient
@@ -100,6 +101,7 @@ class TrajFeatBuilder(DataFlow):
 
 Make the object:
 
+<!-- wads-docs: skip fragment; continues the legacy example above -->
 ```python
 dflow = TrajFeatBuilder(verbose_level=10)
 
@@ -107,6 +109,7 @@ dflow = TrajFeatBuilder(verbose_level=10)
 
 Get an `ip_list` for a given visitor
 
+<!-- wads-docs: skip fragment; dflow comes from the legacy example above -->
 ```python
 dflow.get_data('ip_list', visitor_id='201411301840218052872011')
 ```
@@ -138,6 +141,7 @@ dflow.get_data('ip_list', visitor_id='201411301840218052872011')
 
 Get a count of the locations coordinates where visitor was present.
 
+<!-- wads-docs: skip fragment; dflow comes from the legacy example above -->
 ```python
 dflow.get_data('latlon_counts', visitor_id='201411301840218052872011')
 ```

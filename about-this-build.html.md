@@ -2,7 +2,7 @@
 
 # About this build
 
-This documentation was built on **2026-11-22 17:47 UTC** from commit <a href="https://github.com/i2mint/dacc/commit/d0b7a160f1f514dd4f1591ab154df935081ec4dd"><code>d0b7a16</code></a> on branch <code>master</code>, for **dacc 0.0.2** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-22 22:40 UTC** from commit <a href="https://github.com/i2mint/dacc/commit/44f3d89ee96fb64a3ebb806cba634ed5ab9115d8"><code>44f3d89</code></a> on branch <code>master</code>, for **dacc 0.0.2** (from <code>pyproject.toml</code>).
 
 #### NOTE
 Nothing suggests a mismatch: the tree was clean at the commit above, and the documented version is the one on PyPI.
@@ -11,7 +11,7 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 
 |                     |                                                                                                                                                    |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/i2mint/dacc/commit/d0b7a160f1f514dd4f1591ab154df935081ec4dd"><code>d0b7a160f1f514dd4f1591ab154df935081ec4dd</code></a> |
+| Commit              | <a href="https://github.com/i2mint/dacc/commit/44f3d89ee96fb64a3ebb806cba634ed5ab9115d8"><code>44f3d89ee96fb64a3ebb806cba634ed5ab9115d8</code></a> |
 | Branch              | <code>master</code>                                                                                                                                |
 | Tags at this commit | none                                                                                                                                               |
 | Working tree        | clean                                                                                                                                              |
@@ -22,9 +22,9 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>i2mint/dacc</code>                                                                   |
-| Run          | <a href="https://github.com/i2mint/dacc/actions/runs/45051231593">45051231593</a>          |
+| Run          | <a href="https://github.com/i2mint/dacc/actions/runs/45078936122">45078936122</a>          |
 | Ref          | <code>refs/heads/master</code>                                                             |
-| Event commit | <code>d0b7a160f1f514dd4f1591ab154df935081ec4dd</code> (in the history of the built commit) |
+| Event commit | <code>44f3d89ee96fb64a3ebb806cba634ed5ab9115d8</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -55,7 +55,7 @@ Latest release: <a href="https://pypi.org/project/dacc/0.0.2/">0.0.2</a>, the sa
 
 ```bash
 git clone https://github.com/i2mint/dacc && cd dacc
-git checkout d0b7a160f1f514dd4f1591ab154df935081ec4dd
+git checkout 44f3d89ee96fb64a3ebb806cba634ed5ab9115d8
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```

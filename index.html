@@ -258,6 +258,7 @@ involving properties and cached_properties…</p>
 <p>Here is a full, and real, example of usage.</p>
 <p>Here we tap into some website visitor data (in mongoDB) that has IP addresses for every visit,
 and use those to get approximate geo-coordinates for the visit.</p>
+<!-- wads-docs: skip legacy example importing pygeoip (not a dacc dependency) -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ut.util.data_flow</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFlow</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pygeoip</span>
@@ -339,11 +340,13 @@ and use those to get approximate geo-coordinates for the visit.</p>
 </pre></div>
 </div>
 <p>Make the object:</p>
+<!-- wads-docs: skip fragment; continues the legacy example above -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dflow</span> <span class="o">=</span> <span class="n">TrajFeatBuilder</span><span class="p">(</span><span class="n">verbose_level</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 </pre></div>
 </div>
 <p>Get an <code class="docutils literal notranslate"><span class="pre">ip_list</span></code> for a given visitor</p>
+<!-- wads-docs: skip fragment; dflow comes from the legacy example above -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dflow</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="s1">'ip_list'</span><span class="p">,</span> <span class="n">visitor_id</span><span class="o">=</span><span class="s1">'201411301840218052872011'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -372,6 +375,7 @@ and use those to get approximate geo-coordinates for the visit.</p>
 </pre></div>
 </div>
 <p>Get a count of the locations coordinates where visitor was present.</p>
+<!-- wads-docs: skip fragment; dflow comes from the legacy example above -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dflow</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="s1">'latlon_counts'</span><span class="p">,</span> <span class="n">visitor_id</span><span class="o">=</span><span class="s1">'201411301840218052872011'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -409,7 +413,7 @@ and use those to get approximate geo-coordinates for the visit.</p>
 </section>
 </section>
 
-<p class="epythet-provenance" style="font-size:.8em;opacity:.65;margin-top:2.5em;text-align:right">built 2026-11-22 17:47 UTC from <a href="https://github.com/i2mint/dacc/commit/d0b7a160f1f514dd4f1591ab154df935081ec4dd">d0b7a16</a> (master) · dacc 0.0.2 · <a href="about-this-build.html">about this build</a></p>
+<p class="epythet-provenance" style="font-size:.8em;opacity:.65;margin-top:2.5em;text-align:right">built 2026-11-22 22:40 UTC from <a href="https://github.com/i2mint/dacc/commit/44f3d89ee96fb64a3ebb806cba634ed5ab9115d8">44f3d89</a> (master) · dacc 0.0.2 · <a href="about-this-build.html">about this build</a></p>
         </article>
       </div>
       <footer>
