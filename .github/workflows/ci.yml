@@ -1,0 +1,56 @@
+# wads CI — calls the reusable workflow hosted in i2mint/wads.
+#
+# All configuration comes from this repo's pyproject.toml [tool.wads.ci.*].
+# To customize the workflow itself (rare), replace this file with the
+# full inline template `wads/data/github_ci_uv.yml` from i2mint/wads.
+#
+# Pinning: `@master` floats with wads. If you need a stable job graph for
+# a release-sensitive repo, change `@master` to a wads tag (e.g. `@0.2.15`;
+# tags have no `v` prefix). That freezes this workflow, not the actions it
+# calls, which still run at `@master`.
+# CI failure does not block a published release — it blocks the publish
+# step itself — so floating master is generally safe.
+#
+# Permissions: GitHub validates that the caller grants AT LEAST the
+# permissions any job in the called workflow requests — at workflow-parse
+# time, not at run-time, even if the job would be skipped via `if:`.
+# The reusable workflow needs:
+#   contents: write   for the publish job's version-bump push-back
+#                     and for the github-pages job's gh-pages branch push
+#   pages: write      for the github-pages job's REST API Pages config
+# Both default to `write` on org-account GITHUB_TOKEN and need to be
+# granted explicitly on personal-account callers (where the default is
+# read-only). No `id-token: write` needed — the publish-github-pages
+# action uses peaceiris/actions-gh-pages (branch-based) + REST API,
+# not the OIDC `actions/deploy-pages` flow.
+name: Continuous Integration
+on: [push, pull_request]
+jobs:
+  ci:
+    uses: i2mint/wads/.github/workflows/uv-ci.yml@master
+    permissions:
+      contents: write
+      pages: write
+    # Transport (named): passes ONLY the secrets listed below — PYPI_PASSWORD
+    # (for the publish job) plus the secret behind each env var declared in
+    # [tool.wads.ci.env]. `wads-secrets add VAR_NAME` declares a var and adds
+    # its secret here. Every listed name must be declared by the reusable
+    # workflow (the superset in wads/ci_secrets.py) or GitHub rejects this
+    # workflow at parse time; a missing name is a one-line addition there.
+    # (Cross-owner `secrets: inherit` does not propagate secrets, so it
+    # cannot replace this list.)
+    #
+    # Opt-in alternative: `wads-migrate ci-to-stub --transport json` passes
+    # this repo's WHOLE secrets context — every secret it can read, including
+    # org-level ones — as one WADS_CI_SECRETS_JSON secret. GitHub's
+    # malicious-workflow scanner may hold runs that do that: `action_required`,
+    # zero jobs, no log (i2mint/wads#74, #101).
+    #
+    # *Which* of these become job env vars — and which are required — is
+    # driven entirely by [tool.wads.ci.env] in pyproject.toml; nothing is
+    # exported unless declared there. Non-sensitive values don't need a secret:
+    # use [tool.wads.ci.env].defaults (committed literals) or a repository
+    # *variable* (`gh variable set NAME`) — declared names fall back to
+    # repo variables automatically.
+    secrets:
+      PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
