@@ -1,0 +1,19 @@
+# dacc
+
+> A declarative approache to data access object construction
+
+
+## Pages
+
+- [dacc](index.html.md): A declarative approach to data access object construction
+- [API reference](api.html.md): | &#96;dacc&#96;   |    |
+- [dacc](_autosummary/dacc.html.md): | &#96;ascertain_list&#96;(x)                          | ascertain_list(x) blah blah returns &#91;x&#93; if x is not...
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 17:47 UTC&#42;&#42; from commit &lt;a href="https://github.com/i2m...
+
+## Optional
+
+- [dacc.md](dacc.md): Complete documentation in a single file.
+
+## Build
+
+- [build_info.json](build_info.json): build provenance (commit, version, tool versions, whether the docs match the package)

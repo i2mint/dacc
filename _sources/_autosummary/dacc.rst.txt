@@ -1,0 +1,20 @@
+﻿dacc
+====
+
+.. automodule:: dacc
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      ascertain_list
+      get_subdict_and_remainder
+      has_non_callable_attr
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DataFlow
+   

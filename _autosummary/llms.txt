@@ -1,0 +1,12 @@
+# dacc
+
+> A declarative approache to data access object construction
+
+
+## Pages in this subsection
+
+- [dacc](dacc.html.md): | &#96;ascertain_list&#96;(x)                          | ascertain_list(x) blah blah returns &#91;x&#93; if x is not...
+
+## Optional
+
+- [Top-level llms.txt](../llms.txt): Complete documentation index.
